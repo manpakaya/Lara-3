@@ -33,6 +33,7 @@
     "fluent-ffmpeg":"2.1.3",
     "@xaviabot/fb-downloader":"1.0.14",
     "g-i-s":"2.1.7",
-    "cheerio":"1.0.0"
+    "cheerio":"1.0.0",
+    "denethdev-ytmp3":"1.0.3"
   }
 }
