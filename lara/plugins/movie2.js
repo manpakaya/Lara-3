@@ -260,16 +260,7 @@ cmd({
                     };
                     await conn.sendMessage(from, imageMessage, { quoted: mek });
 
-                    // Fetch the episode page to extract the video link (iframe src)
-                    const episodePageResponse = await axios.get(selectedEpisode.episodeLink);
-                    const $ = cheerio.load(episodePageResponse.data);
-
-                    // Extract the IFRAME src link
-                    const iframeSrc = $('div#player-holder iframe').attr('src');
-
-                    if (iframeSrc) {
-                        // Call the external API to get the download link using the iframe link
-                       const apiUrl = `https://www.dark-yasiya-api.site/download/ginisisila?url=${iframeSrc}`;
+                       const apiUrl = `https://www.dark-yasiya-api.site/download/ginisisila?url=${selectedEpisode.episodeLink}`;
 
                         try {
                             const downloadResponse = await axios.get(apiUrl);
