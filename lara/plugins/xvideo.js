@@ -82,6 +82,7 @@ const sentMsg = await conn.sendMessage(from, {
                       await conn.sendMessage(from, { delete: sentMsg.key });
                 
                 } else if (messageType === '2') {
+                const xDown = info.result.downloads;
                    await conn.sendMessage(from, { react: { text: '⬆️', key: mek.key } });
                     await conn.sendMessage(from, {
                         document: { url: xDown.highQuality},
@@ -91,6 +92,7 @@ const sentMsg = await conn.sendMessage(from, {
                                             
                       }, { quoted: mek });
                      } else if (messageType === '3') {
+                     const xDown = info.result.downloads;
                     await conn.sendMessage(from, { react: { text: '⬆️', key: mek.key } });
                     await conn.sendMessage(from, {
                         document: { url: xDown.hlsStream},
