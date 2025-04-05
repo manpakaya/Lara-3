@@ -14,14 +14,14 @@ try {
 if (!q) return reply('*Please give me a link*');
 
 const info =  await fetchJson(`https://apis-keith.vercel.app/download/porn?url=${q}`);
-const xDowninfo = info.result;
+const xDowninfo = info.result.videoInfo;
 let cap =`
 ✾━┫ *⚬Lααɾα-xᴠɪᴅᴇᴏ⚬* ┣━✾
               *ᴸ  ͣ  ͣ  ͬ  ͣ  ✻  ᴸ  ͣ  ͣ  ͬ  ͣ*
 
-> ❍ *ᴛɪᴛʟᴇ :* ${xDowninfo.videoInfo.title}
-> ❍ *ᴅᴜʀᴀᴛɪᴏɴ :* ${xDowninfo.videoInfo.duration}
-> ❍ *ᴅᴇꜱᴄʀɪᴘᴛɪᴏɴ :* ${xDowninfo.videoInfo.description}
+> ❍ *ᴛɪᴛʟᴇ :* ${xDowninfo.title}
+> ❍ *ᴅᴜʀᴀᴛɪᴏɴ :* ${xDowninfo.duration}
+> ❍ *ᴅᴇꜱᴄʀɪᴘᴛɪᴏɴ :* ${xDowninfo.description}
 
 🔢 *ʀᴇᴘʟʏ ʙᴇʟᴏᴡ ᴛʜᴇ ɴᴜᴍʙᴇʀ ᴛᴏ*
 *ᴅᴏᴡɴʟᴏᴀᴅ ᴠᴇᴅɪᴏ Qᴜᴀʟɪᴛʏ*
@@ -70,12 +70,12 @@ const sentMsg = await conn.sendMessage(from, {
                 
 
                 if (messageType === '1') {
-                const xDown = info.result;
+                const xDown = info.result.downloads;
                   await conn.sendMessage(from, { react: { text: '⬆️', key: mek.key } });
                     await conn.sendMessage(from, {
-                        document: { url: xDown.downloads.lowQuality},
+                        document: { url: xDown.lowQuality},
                         mimetype: "video/mp4",
-                        fileName: `${xDowninfo.videoInfo.title}.mp4`, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
+                        fileName: `${xDowninfo.title}.mp4`, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
                         caption: sadee
                                             
                       }, { quoted: mek });
