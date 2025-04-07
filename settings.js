@@ -14,7 +14,7 @@ STATUS_REPLY_MSG: process.env.STATUS_REPLY_MSG || "*_`AUTO STATUS JUST NOW SEEN 
 MODE: process.env.MODE || "public",
 AUTO_VOICE: process.env.AUTO_VOICE || "true",
 AUTO_STICKER: process.env.AUTO_STICKER || "false",
-AUTO_REPLY: process.env.AUTO_STICKER || "true",    
+AUTO_REPLY: process.env.AUTO_REPLY || "true",    
 AUTO_REACT: process.env.AUTO_REACT || "false",
 FAKE_RECORDING: process.env.FAKE_RECORDING || "true",
 AUTO_TYPING: process.env.AUTO_TYPING || "false",
